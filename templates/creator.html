@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Artemii Dovzhenko | Python Developer</title>
+    <link rel="icon" type="image/png" href="/static/img/globe.png">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="contact_section">
+        <div class="containert">
+            <form method="POST" class="form-register" style="color:white">
+                {{ form.title.label() }}
+                {{ form.title(class="form-control", placeholder="Title here") }}
+
+                {{ form.subtitle.label() }}
+                {{ form.subtitle(class="form-control-text", placeholder="Subtitle here") }}
+
+                {{ form.img_url.label() }}
+                {{ form.img_url(class="form-control", placeholder="URL TO IMAGE") }}
+
+
+                {{ form.proj_url.label() }}
+                {{ form.proj_url(class="form-control", placeholder="URL TO PROJECT") }}
+
+                {{ form.submit(class="hero-btn2") }}
+            </form>
+
+        </div>
+
+    </section>
+</body>
+</html>

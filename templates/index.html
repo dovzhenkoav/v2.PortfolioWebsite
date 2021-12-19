@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Artemii Dovzhenko | Python Developer</title>
+    <link rel="icon" type="image/png" href="static/img/globe.png">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <section class="container">
+
+            <nav>
+                <i class="fa fa-bars fabe" onclick="showMenu()"></i>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="#ABOUT_SEC">ABOUT</a></li>
+                        <li><a href="#WORK_SEC">WORK</a></li>
+                        <li><a href="#SKILLS_SEC">SKILLS</a></li>
+                        <li><a href="#CONTACT_SEC">CONTACT</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+
+
+            <div class="text-box">
+                <h3>Hi, i'm</h3>
+                <h1>Artemii Dovzhenko</h1>
+                <p>Junior python developer</p>
+                <a href="#CONTACT_SEC" class="hero-btn">Contact me!</a>
+            </div>
+            <div class="my_image">
+                <img src="static/img/att2.png">
+            </div>
+
+
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0px";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+    </section>
+
+    <section class="about_section" id="ABOUT_SEC">
+        <div class="about_me">
+            <h1>ABOUT ME</h1>
+            <p>Hello! I'm Artemii. Since childhood I like to play videogames and learn something new about how computers and programs works. At the beginning of 2021 year I realised, that IT industry is very cool and start learn programming like a hobby! Now I work for large IT company, that calls <a href="https://taxcom.ru/", target="_blank">"LLC TAXCOM"</a> by Analytic. But actually I feel desire to become a real programmer and work a lot to make great commerce products.</p>
+            <p>Want to work together? Just <a href="#CONTACT_SEC">contact me!</a></p>
+        </div>
+
+
+    </section>
+
+        <div class="proj_title" id="WORK_SEC">
+            <h1>WORK</h1>
+        </div>
+
+    <section class="project_section">
+
+
+        <div class="proj_support">
+        <div class="project_background">
+
+
+
+            <ul>
+                {% for proj in projects %}
+                <li>
+                    <a href="{{ proj.proj_url }}" target="_blank">
+                        <div class="project_element" style="background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url({{proj.img_url}});">
+
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+
+            </ul>
+            <a style="margin:20px" class="hero-btn" href="{{ url_for('works')}}" >VIEW ALL</a>
+        </div>
+        </div>
+
+    </section>
+
+    <div class="proj_title" id="SKILLS_SEC">
+            <h1>SKILLS</h1>
+        </div>
+
+    <section class="skills_section">
+        <p>PYTHON</p>
+        <div class="containers">
+            <div class="skills html">90%</div>
+        </div>
+
+        <p>HTML</p>
+        <div class="containers">
+          <div class="skills css">80%</div>
+        </div>
+
+        <p>CSS</p>
+        <div class="containers">
+          <div class="skills js">65%</div>
+        </div>
+
+        <p>JAVA SCRYPT</p>
+        <div class="containers">
+          <div class="skills php">30%</div>
+        </div>
+    </section>
+    <div class="contact_title" id="CONTACT_SEC">
+        <h1>CONTACT ME</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <p>Message was successfully sent!</p>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <section class="contact_section">
+        <div class="containert">
+            <form method="POST" class="form-register" style="color:white">
+                {{ form.name.label() }}
+                {{ form.name(class="form-control", placeholder="Name Yourself") }}
+
+                {{ form.email.label() }}
+                {{ form.email(class="form-control", placeholder="E-mail Address") }}
+
+                {{ form.message.label() }}
+                {{ form.message(class="form-control-text", placeholder="Type some message to me. I'll be very happy!") }}
+
+                {{ form.submit(class="hero-btn2") }}
+            </form>
+
+        </div>
+
+    </section>
+    <footer>
+        <p>©Artemii Dovzhenko - <a href="">OFAxTAB@vk.com</a></p>
+    </footer>
+</body>
+</html>

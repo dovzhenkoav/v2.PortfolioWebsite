@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Artemii Dovzhenko | Python Developer</title>
+    <link rel="icon" type="image/png" href="/static/img/globe.png">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+            <nav>
+                <i class="fa fa-bars fabe" onclick="showMenu()"></i>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="/#ABOUT_SEC">ABOUT</a></li>
+                        <li><a href="/#WORK_SEC">WORK</a></li>
+                        <li><a href="/#SKILLS_SEC">SKILLS</a></li>
+                        <li><a href="/#CONTACT_SEC">CONTACT</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        <section class="project_section">
+
+
+        <div class="proj_support">
+        <div class="project_background">
+
+
+
+            <ul>
+                {% for proj in projects %}
+                <li>
+                    <a href="{{ proj.proj_url }}" target="_blank">
+                        <div class="project_element" style="background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url({{proj.img_url}});">
+
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        </div>
+
+    </section>
+</body>
+</html>
